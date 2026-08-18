@@ -17,7 +17,7 @@
   --font-display:'Fraunces',serif; --font-mono:'Space Mono',monospace;
 }
 *{margin:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:'Space Mono',monospace;line-height:1.6;font-size:15px}
+body{background:var(--bg);color:var(--fg);font-family:'Space Mono',monospace;line-height:1.6;font-size:15px;overflow-x:hidden}
 .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
 header{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
 .wordmark{font-family:var(--font-display);font-weight:700;font-size:22px;letter-spacing:-.01em}
@@ -60,6 +60,24 @@ h2{font-family:var(--font-display);font-size:clamp(26px,4vw,36px);font-weight:70
 .cta p{color:var(--muted);margin-bottom:26px;font-family:'Space Mono',monospace;font-size:14px}
 footer.site{padding:36px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);font-family:var(--font-mono)}
 a{color:var(--rust)}
+
+@media(min-width:1440px){
+  .wrap{max-width:1320px}
+  body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(680px circle at 4% 18%, rgba(179,80,42,0.10), transparent 60%),
+      radial-gradient(760px circle at 96% 70%, rgba(156,106,30,0.12), transparent 60%);
+  }
+  .hero .masthead{max-width:1040px}
+  .hero h1{font-size:clamp(44px,6.5vw,128px)}
+  .hero p{max-width:560px}
+  .sticker.s1{left:1vw}
+  .sticker.s2{right:.5vw}
+  h2{font-size:clamp(28px,3.2vw,46px)}
+  section{padding:85px 0}
+  .cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+  .cta{padding:80px 60px}
+}
 </style>
 </head>
 <body>
